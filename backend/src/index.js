@@ -5,7 +5,6 @@ import { app } from "./app.js";
 //     path: './env'
 // })
 
-console.log(process.env.MONGODB_URI);
 
 connectDB()
 .then(() => {

@@ -18,8 +18,8 @@ const getAuthorizationCode = async(req, res) => {
 }
 
 const getAccessToken = async(req, res) => {
-    console.log(req.originalUrl)
-    console.log(req.query);
+    // console.log(req.originalUrl)
+    // console.log(req.query);
     const {code, state} = req.query;
     console.log(code, state);
 
@@ -43,10 +43,7 @@ const getAccessToken = async(req, res) => {
         }
     });
     console.log(response);
-    return res.status(200).json({
-        success: true,
-        message: "Successfully fetched the access token"
-    })
+    res.redirect('http://localhost:5173');
 }
 
 export {
