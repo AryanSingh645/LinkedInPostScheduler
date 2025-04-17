@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAccessToken, getAuthorizationCode } from "../controllers/auth.controller.js";
+import { getAccessToken, getAuthorizationCode, verifyUser } from "../controllers/auth.controller.js";
 
 const router = Router();
 
@@ -7,5 +7,6 @@ const router = Router();
 
 router.route('/getAuthorizationCode').get(getAuthorizationCode);
 router.route('/callback').get(getAccessToken);
+router.route('/verify').get(verifyUser);
 
 export default router;

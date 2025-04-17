@@ -5,7 +5,7 @@ import cors from 'cors';
 const app = express();
 
 app.use(cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: "http://localhost:5173",
     credentials: true
 }))
 
@@ -15,7 +15,9 @@ app.use(express.static("public"))
 app.use(cookieParser())
 
 import authorzationCodeRoute from './routes/auth.routes.js';
+import userRoute from './routes/user.routes.js'
 app.use('/auth/linkedin', authorzationCodeRoute)
+app.use('/auth/user', userRoute)
 // app.use('/auth/linkedin/callback', )
 
 export {app}

@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const verifyLinkedInToken = async(token) => {
     try {
-        const response = await axios.get('https://api.linkedin.com/v2/me', {
+        const response = await axios.get('https://api.linkedin.com/v2/userinfo', {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
