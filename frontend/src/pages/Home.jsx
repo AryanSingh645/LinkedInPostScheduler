@@ -53,8 +53,14 @@ function Home() {
     setIsProfileOpen(false);
   };
 
-  const handleLogout = () => {
-    console.log('Logging out...');
+  const handleLogout = async() => {
+    const response = await axios.get('/auth/user/logout', {withCredentials: true});
+    if(!response.data.success){
+        console.log("Error logging out", response.data.message);
+    } else {
+        console.log("Logged out successfully");
+    }
+    window.location.href = '/signin';
     setIsProfileOpen(false);
   };
 
