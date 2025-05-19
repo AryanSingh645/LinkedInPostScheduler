@@ -35,7 +35,7 @@ const createUserPost = async (req, res) => {
                     message: "No image Found"
                 });
             }
-            images.push(image.url);
+            else images.push(image.url);
         }
 
         // Save the post to the database
